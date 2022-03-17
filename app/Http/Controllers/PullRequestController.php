@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\Storage;
 
 class PullRequestController extends Controller
 {
+    public function index(): View
+    {
+        $pullRequests = PullRequest::all(); // This is not a good practice (In real project, it would be paginated)
+
+        return view('templates.pull-request.index', compact('pullRequests'));
+    }
+
     public function show(PullRequest $pullRequest): View|RedirectResponse
     {
         $workflow = $pullRequest->workflow_get();

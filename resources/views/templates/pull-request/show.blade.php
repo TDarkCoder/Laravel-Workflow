@@ -25,6 +25,7 @@
                     @endforeach
                 </ul>
             </div>
+
             <div class="col-md-6">
                 <button
                     class="btn btn-primary btn-sm"
@@ -40,5 +41,5 @@
         </div>
     </form>
 
-    @include('templates.pull-request.graph', ['file' => $file, 'marking' => $pullRequest->marking])
+    <x-pull-request.graph :file="$file" :marking="$pullRequest->marking"/>
 @endsection
