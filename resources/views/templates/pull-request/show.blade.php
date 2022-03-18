@@ -19,8 +19,7 @@
                                 disabled
                                 @else
                                 class="btn btn-success btn-sm"
-                                @endif
-                            >
+                                @endif>
                                 {{ $transition }}
                             </button>
                         </li>
@@ -28,16 +27,15 @@
                 </ul>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 text-end">
                 <button
                     class="btn btn-primary btn-sm"
                     name="transition"
                     value="reset"
                     @if($pullRequest->marking === $pullRequest->initialPlace)
                     disabled
-                    @endif
-                >
-                    Reset
+                    @endif>
+                    {{ __('Reset') }}
                 </button>
             </div>
         </div>

@@ -59,7 +59,7 @@
                 await viewer.importXML(xhr.response);
                 viewer.get('canvas');
             } else {
-                alert('Error occurred! Looks like file is broken')
+                alert("{{ __('Error occurred! Looks like file is broken') }}")
             }
         }
     }

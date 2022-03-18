@@ -6,7 +6,7 @@
     @csrf
     <div class="row g-3 needs-validation">
         <div class="col-sm-6">
-            <label for="title" class="form-label">Title</label>
+            <label for="title" class="form-label">{{ __('Title') }}</label>
             <input
                 type="text"
                 id="title"
@@ -20,7 +20,7 @@
             @enderror
         </div>
         <div class="col-sm-6">
-            <label for="file" class="form-label">File</label>
+            <label for="file" class="form-label">{{ __('File') }}</label>
             <input
                 type="file"
                 id="file"
@@ -35,7 +35,7 @@
     </div>
     <div class="text-end mt-4">
         <button type="submit" class="btn btn-sm btn-outline-success">
-            Save
+            {{ __('Save') }}
         </button>
     </div>
 </form>

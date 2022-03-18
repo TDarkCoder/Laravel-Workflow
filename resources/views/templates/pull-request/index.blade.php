@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <x-partials.subheader title="Pull Requests"/>
+    <x-partials.subheader :title="__('Pull Requests')"/>
 
     <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-4">
         @foreach($pullRequests as $pullRequest)
@@ -14,9 +14,10 @@
                         <p class="card-text">{{ $pullRequest->body }}</p>
                     </div>
                     <div class="card-footer">
-                        <a href="{{ route('pull-request.show', ['pullRequest' => $pullRequest->id]) }}"
-                           class="btn btn-sm btn-outline-primary">
-                            Manage
+                        <a
+                            href="{{ route('pull-request.show', ['pullRequest' => $pullRequest->id]) }}"
+                            class="btn btn-sm btn-outline-primary">
+                            {{ __('Manage') }}
                         </a>
                     </div>
                 </div>
@@ -25,6 +26,6 @@
     </div>
 
     @if($pullRequests->count() < 1)
-        <h3 class="m-5 text-center">No pull requests</h3>
+        <h3 class="m-5 text-center">{{ __('No pull requests') }}</h3>
     @endif
 @endsection
