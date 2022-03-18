@@ -26,7 +26,7 @@ class PullRequestController extends Controller
         if (is_null($file) && !session('error')) {
             return redirect(route('pull-request.show', [
                 'pullRequest' => $pullRequest->id,
-            ]))->with('error', 'BMP file does not exist');
+            ]))->with('error', __('BMP file does not exist'));
         }
 
         return view('templates.pull-request.show', compact('file', 'pullRequest'));
@@ -40,7 +40,7 @@ class PullRequestController extends Controller
             if (!$pullRequest->workflow_can($request->transition)) {
                 return redirect(route('pull-request.show', [
                     'pullRequest' => $pullRequest->id,
-                ]))->with('error', 'Invalid transition is invoked');
+                ]))->with('error', __('Invalid transition is invoked'));
             }
 
             $pullRequest->workflow_apply($request->transition);

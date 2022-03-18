@@ -10,6 +10,6 @@ class PullRequestSeeder extends Seeder
 {
     public function run(): void
     {
-        PullRequest::factory(20)->create();
+        PullRequest::factory(5)->create();
     }
 }
