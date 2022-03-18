@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\PullRequestController;
-use App\Http\Controllers\WorkflowController;
+use App\Http\Controllers\WorkflowUploadController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', fn() => redirect(route('pull-request.index')))->name('home');
@@ -12,8 +12,10 @@ Route::group(['controller' => PullRequestController::class, 'prefix' => 'pull-re
         Route::put('{pullRequest}', 'update')->name('update');
     });
 });
-Route::group(['controller' => WorkflowController::class, 'prefix' => 'workflow'], function () {
-    Route::name('workflow.')->group(function () {
-        Route::get('/', 'index')->name('index');
+Route::group(['controller' => WorkflowUploadController::class, 'prefix' => 'workflow-upload'], function () {
+    Route::name('workflow-upload.')->group(function () {
+        Route::get('list', 'index')->name('index');
+        Route::get('{workflowUpload?}', 'show')->name('show');
+        Route::post('{workflowUpload?}', 'save')->name('save');
     });
 });

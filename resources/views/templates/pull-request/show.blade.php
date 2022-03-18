@@ -1,6 +1,8 @@
 @extends('layout')
 
 @section('content')
+    <x-partials.subheader :title="$pullRequest->title" :route="route('pull-request.index')"/>
+
     <form action="{{ route('pull-request.update', ['pullRequest' => $pullRequest->id]) }}" method="post">
         <div class="row">
             <div class="col-md-6">
