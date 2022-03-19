@@ -8,6 +8,7 @@
     for (let i = 0; i < texts.length; i++) {
         if (texts[i].textContent === '{{ $marking }}') {
             texts[i].parentElement.querySelector('ellipse').setAttribute('fill', '#ffa500');
+            break;
         }
     }
 </script>
