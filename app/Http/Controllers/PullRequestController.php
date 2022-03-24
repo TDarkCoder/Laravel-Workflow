@@ -26,7 +26,7 @@ class PullRequestController extends Controller
         if (is_null($file) && !session('error')) {
             return redirect(route('pull-request.show', [
                 'pullRequest' => $pullRequest->id,
-            ]))->with('error', __('BMP file does not exist'));
+            ]))->with('error', __('BPMN file does not exist'));
         }
 
         return view('templates.pull-request.show', compact('file', 'pullRequest'));
